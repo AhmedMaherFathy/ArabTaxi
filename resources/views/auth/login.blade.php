@@ -115,8 +115,6 @@
                                         <input type="submit" value="login" class="btn  btn-user btn-block"
                                             style="background-color: #92023F ;color: white;  ">
                                     </form>
-
-
                                 </div>
                             </div>
                         </div>

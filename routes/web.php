@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\dashboard\AdminListController;
+use App\Http\Controllers\dashboard\DriverListController;
 use App\Http\Controllers\dashboard\StatisticsController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -30,6 +32,11 @@ Route::middleware('auth')->group(function () {
 });
 Route::prefix('dashboard')->group(function(){
     Route::get('/',[StatisticsController::class,'get'])->name('statistics.dashboard');
+    Route::get('/maledriver',[DriverListController::class , 'index'])->name('driver.male');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/dashboard/adminlist',[AdminListController::class ,'index'])->name('admin.list');
+Route::post('/dashboard/adminlist/register',[AdminListController::class ,'register'])->name('admin.list.register');
+Route::get('/dashboard/adminlist/{id}', [AdminListController::class, 'destroy'])->name('delete.user');
 
 require __DIR__.'/auth.php';

@@ -19,13 +19,14 @@
 
     <!-- Custom styles for this template-->
     <link href="{{ asset('assets/css/sb-admin-2.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('assets/css/rtl.css')}}">
 
 </head>
 
-<body id="page-top">
+<body id="page-top" class="rtl">
 
     <!-- Page Wrapper -->
-    <div id="wrapper">
+    <div id="wrapper" class="rtl">
 
         <!-- Sidebar -->
         @yield('sidebar')
@@ -37,7 +38,7 @@
             
             <div id="content">
                 
-                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow" style="direction: rtl; text-align:left;">
 
                     <!-- Sidebar Toggle (Topbar) -->
                     {{-- <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
@@ -197,7 +198,7 @@
                                 <img class="img-profile rounded-circle" src="{{asset('assets/img/undraw_profile_2.svg')}}">
                             </a>
                             <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in " aria-labelledby="userDropdown">
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in " style="direction: ltr; text-align:left;" aria-labelledby="userDropdown">
                                 {{--<a class="dropdown-item" href="#">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
@@ -212,7 +213,7 @@
                                 </a> --}}
                                 {{-- <div class="dropdown-divider"></div> --}}
                                 {{-- data-toggle="modal" --}}
-                                <a class="dropdown-item" href="#"  data-toggle="modal"  data-target="#logoutModal">
+                                <a  class="dropdown-item" href="#"  data-toggle="modal"  data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>

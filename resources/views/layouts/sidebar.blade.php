@@ -1,5 +1,5 @@
 @section('sidebar')
-<ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color: #92023F ;">
+<ul class="navbar-nav sidebar sidebar-dark accordion " id="accordionSidebar" style="background-color: #92023F ; direction:rtl; text-align:right;">
 
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
@@ -14,37 +14,47 @@
 
     <!-- Divider -->
     <hr class="sidebar-divider my-0">
+    {{-- <hr> --}}
 
     <!-- Nav Item - Dashboard -->
-    <li class="nav-item active">
-        <a class="nav-link" href="{{route('statistics.dashboard')}}">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>لوحه التحكم</span></a>
+    <li class="nav-item active sidebaricone" >
+        <a class="nav-link" href="{{route('statistics.dashboard')}}" style="direction:rtl; text-align:right;">
+            <i class="fas fa-fw fa-tachometer-alt" class="sidebaricone"></i>
+            <span>لوحه التحكم</span>
+        </a>
     </li>
 
     <!-- Divider -->
-    <hr class="sidebar-divider">
+    <hr class="sidebar-divider" >
 
     <!-- Heading -->
-    <div class="sidebar-heading">
-        Interface
-    </div>
+    {{-- <div class="sidebar-heading">
+        الوجهات
+    </div> --}}
 
     <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item">
-        <a class="nav-link collapsed"  data-toggle="collapse" data-target="#collapseTwo"
-            aria-expanded="true" aria-controls="collapseTwo">
+    <li class="nav-item active sidebaricone">
+        <a class="nav-link " href="{{route('admin.list')}}"  style="direction:rtl; text-align:right;">
             {{-- <i class="fas fa-fw fa-cog"></i> --}}
-            <span>قائمه المتحكمين</span>
+            <span>قائمه المتحكمين</span> 
         </a>
     </li>
-    {{-- <li class="nav-item">
-        <a class="nav-link collapsed"  data-toggle="collapse" data-target="#collapseTwo"
-            aria-expanded="true" aria-controls="collapseTwo" >
-            {{-- <i class="fas fa-fw fa-cog"></i> 
-            <span>Question</span>
+    <hr class="sidebar-divider d-none d-md-block">
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item active" style="display: grid">
+        <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" style="direction:rtl; text-align:right;">
+            {{-- <i class="fas fa-fw fa-cog"></i> --}}
+            <span>السائقين</span>
         </a>
-    </li> --}}
+        <div id="collapseTwo" class="collapse " aria-labelledby="headingTwo" data-parent="#accordionSidebar" style="direction:rtl; text-align:right;">
+            <div class=" py-2 collapse-inner rounded">
+                {{-- <h6 class="collapse-header">Custom Components:</h6> --}}
+                <a class="collapse-item " href="{{route('driver.male')}}" style="direction:rtl; text-align:right;">الرجال</a>
+                <a class="collapse-item" href="cards.html" style="direction:rtl; text-align:right;">النساء</a>
+            </div>
+        </div>
+    </li>
+    <!-- Nav Item - Pages Collapse Menu -->
     <hr class="sidebar-divider d-none d-md-block">
     <!-- Sidebar Toggler (Sidebar) -->
     <div class="text-center d-none d-md-inline">
