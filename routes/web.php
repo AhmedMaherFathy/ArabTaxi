@@ -32,7 +32,10 @@ Route::middleware('auth')->group(function () {
 });
 Route::prefix('dashboard')->group(function(){
     Route::get('/',[StatisticsController::class,'get'])->name('statistics.dashboard');
-    Route::get('/maledriver',[DriverListController::class , 'index'])->name('driver.male');
+    Route::get('/maledriver',[DriverListController::class , 'indexMale'])->name('driver.male');
+    Route::get('/maledriver/{id}', [DriverListController::class, 'destroy'])->name('delete.driver');
+    Route::get('/femaledriver',[DriverListController::class , 'indexFemale'])->name('driver.female');
+    Route::get('/femaledriver/{id}', [DriverListController::class, 'destroy'])->name('delete.driver.female');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/dashboard/adminlist',[AdminListController::class ,'index'])->name('admin.list');

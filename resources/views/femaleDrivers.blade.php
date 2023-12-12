@@ -2,7 +2,7 @@
 @extends('layouts.sidebar')
 @extends('layouts.footer')
 @section('content')
-@section('pageHeader', 'قائمه السائقين الرجال')
+@section('pageHeader', 'قائمه السائقات الاناث')
 
 
 
@@ -88,32 +88,32 @@ aria-hidden="true">
                     <tr><th rowspan="1" colspan="1">Name</th><th rowspan="1" colspan="1">Position</th><th rowspan="1" colspan="1">Office</th><th rowspan="1" colspan="1">Age</th><th rowspan="1" colspan="1">Start date</th><th rowspan="1" colspan="1">Salary</th></tr>
                 </tfoot> --}}
                     <tbody style="text-align: center; " >
-                        @foreach ($maleDrivers as $maleDriver)
+                        @foreach ($femaleDrivers as $femaleDriver)
                             <tr class="odd" style=" vertical-align:center;">
-                                <td class="sorting_1" >{{ $maleDriver['name'] }}</td>
-                                <td>{{$maleDriver['address']}}</td>
-                            <td>{{$maleDriver['Rating']}}</td>
-                            <td style="direction: ltr;">{{$maleDriver['phoneNumber']}}</td> 
+                                <td class="sorting_1" >{{ $femaleDriver['name'] }}</td>
+                                <td>{{$femaleDriver['address']}}</td>
+                            <td>{{$femaleDriver['Rating']}}</td>
+                            <td style="direction: ltr;">{{$femaleDriver['phoneNumber']}}</td> 
                             <td>
-                                {{$maleDriver['idNumber']}}
+                                {{$femaleDriver['idNumber']}}
                                 
                             </td>
                             <td >
-                                <a href="#" data-toggle="modal" data-target="#showCarDetails{{ $maleDriver['id'] }}" class="btn btn-primary btn-icon-split">
+                                <a href="#" data-toggle="modal" data-target="#showCarDetails{{ $femaleDriver['id'] }}" class="btn btn-primary btn-icon-split">
                                     <span class="icon text-white-50">
                                         <i class="fas fa-info-circle"></i>
                                     </span>
                                         <span class="text"> عرض تفاصيل السياره</span>
                                 </a>
                                 
-                                <a href="{{ route('delete.driver', $maleDriver->id) }}" class="btn btn-danger btn-icon-split mt-1" >
+                                <a href="{{ route('delete.driver.female', $femaleDriver->id) }}" class="btn btn-danger btn-icon-split mt-1" >
                                     <span class="icon text-white-50">
                                             <i class="fas fa-trash"></i>
                                         </span>
                                         <span class="text">ازل السائق</span>
                                 </a>
                                 {{--  --}}
-                                <div class="modal fade" id="showCarDetails{{ $maleDriver['id'] }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                                <div class="modal fade" id="showCarDetails{{ $femaleDriver['id'] }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
                                 aria-hidden="true">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
@@ -122,9 +122,9 @@ aria-hidden="true">
                                                 
                                             </div>
                                             <div class="modal-body" >
-                                                <p style="text-align: right;"><strong >الموديل :</strong> {{ $maleDriver['model'] }}  </p>
-                                                <p style="text-align: right;"><strong>صوره السياره :</strong> {{ $maleDriver['carPicture'] }}</p>
-                                                <p style="text-align: right;"> <strong> رخصه القياده :</strong> {{ $maleDriver['drivingLicense'] }}</p>
+                                                <p style="text-align: right;"><strong >الموديل :</strong> {{ $femaleDriver['model'] }}  </p>
+                                                <p style="text-align: right;"><strong>صوره السياره :</strong> {{ $femaleDriver['carPicture'] }}</p>
+                                                <p style="text-align: right;"> <strong> رخصه القياده :</strong> {{ $femaleDriver['drivingLicense'] }}</p>
                                                 {{-- <p><strong>Phone Number:</strong> {{ $maleDriver->id ?? '' }}</p>
                                                 <p><strong>ID Number:</strong> {{ $modalDriverIdNumber ?? '' }}</p> --}}
                                             </div>

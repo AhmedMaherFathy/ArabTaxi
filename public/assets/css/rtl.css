@@ -2,10 +2,19 @@ html,body{
     direction: rtl;
     text-align: right;
 }
- .nav-item {
+.navbar  {
+    /* float: left; */
+    direction: ltr;
+    text-align: left;
+    /* display: flex; */
+}
+/* .nav-item {
     direction: rtl;
     text-align: right;
     display: flex;
-    align-items: end;
-}
-
+    align-items: start;
+} */
+/* td{
+    height: auto;
+    vertical-align: center;
+} */

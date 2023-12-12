@@ -47,10 +47,10 @@
             <span>السائقين</span>
         </a>
         <div id="collapseTwo" class="collapse " aria-labelledby="headingTwo" data-parent="#accordionSidebar" style="direction:rtl; text-align:right;">
-            <div class=" py-2 collapse-inner rounded">
+            <div class=" py-2 collapse-inner rounded" style="width:80%; ">
                 {{-- <h6 class="collapse-header">Custom Components:</h6> --}}
-                <a class="collapse-item " href="{{route('driver.male')}}" style="direction:rtl; text-align:right;">الرجال</a>
-                <a class="collapse-item" href="cards.html" style="direction:rtl; text-align:right;">النساء</a>
+                <a class="collapse-item " href="{{route('driver.male')}}" style="direction:rtl; text-align:right; color:black;">الرجال</a>
+                <a class="collapse-item" href="{{route('driver.female')}}" style="direction:rtl; text-align:right; color:black;">النساء</a>
             </div>
         </div>
     </li>
